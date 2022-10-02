@@ -1,17 +1,19 @@
 package dto;
 
+import java.math.BigInteger;
+
 public class ReporteDTO {
 
 	private String carrera;
 	private int anio;
 	private int inscriptos;
-	private int egresados;
+	private BigInteger egresados;
 	
 	public ReporteDTO() {
 		super();
 	}
 	
-	public ReporteDTO(String carrera, int anio, int inscriptos, int egresados) {
+	public ReporteDTO(String carrera, int anio, int inscriptos, BigInteger egresados) {
 		this.carrera = carrera;
 		this.anio = anio;
 		this.inscriptos = inscriptos;
@@ -30,7 +32,7 @@ public class ReporteDTO {
 		return inscriptos;
 	}
 
-	public int getEgresados() {
+	public BigInteger getEgresados() {
 		return egresados;
 	}
 
@@ -39,6 +41,7 @@ public class ReporteDTO {
 		return "ReporteDTO [carrera=" + carrera + ", anio=" + anio + ", inscriptos=" + inscriptos + ", egresados="
 				+ egresados + "]";
 	}
+
 	
 	
 }

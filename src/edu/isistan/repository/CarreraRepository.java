@@ -2,13 +2,16 @@ package edu.isistan.repository;
 
 import java.util.List;
 
+import dto.ReporteDTO;
 import edu.isistan.entity.Carrera;
 import edu.isistan.entity.Estudiante;
 import edu.isistan.entity.Matricula;
 
 public interface CarreraRepository {
 
-	void getReporteCarreras();
+
+
+	List<ReporteDTO> generarReporte();
 
 	List<Carrera> getCarrerasWithEstudiantes();
 

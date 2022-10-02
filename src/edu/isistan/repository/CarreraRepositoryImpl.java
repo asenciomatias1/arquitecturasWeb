@@ -1,11 +1,13 @@
 package edu.isistan.repository;
 
+import java.math.BigInteger;
 import java.util.Calendar;
 import java.util.List;
+import java.util.stream.Collectors;
 
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 
+import dto.ReporteDTO;
 import edu.isistan.entity.Carrera;
 import edu.isistan.entity.Estudiante;
 import edu.isistan.entity.Matricula;
@@ -16,34 +18,22 @@ public class CarreraRepositoryImpl implements CarreraRepository {
 	public CarreraRepositoryImpl(EntityManager em) {
 		this.em = em;
 	}
+	public List<ReporteDTO> generarReporte() {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("Example");
+		EntityManager em = emf.createEntityManager();
+		String sql = "SELECT c.nombre, m.anio_cursada,c.cantEstudiantes, 0 as graduados "
+				+ "FROM Carrera as c INNER JOIN Matricula m ON c.id = m.fk_carrera "
+				+ "GROUP BY c.id, m.anio_cursada " + " HAVING m.anio_cursada != 0" + " UNION "
+				+ "SELECT c.nombre, m.anio_cursada, c.cantEstudiantes, count(m.graduado) as graduados "
+				+ "FROM Carrera as c INNER JOIN Matricula m ON c.id = m.fk_carrera "
+				+ "GROUP BY m.fk_carrera, m.graduado " + " HAVING m.graduado !=0 " +
+				 "ORDER BY nombre, anio_cursada ASC";
 
-	@Override
-	public void getReporteCarreras() {
-		TypedQuery<Carrera> q = em.createQuery("SELECT c FROM Carrera c ORDER BY c.nombre", Carrera.class);
-		List<Carrera> carreras = q.getResultList();
-		System.out.println("\n Reporte Carreras: \n");
-		for (Carrera c : carreras) {
-			System.out.println("  Carrera : " + c.getNombre());
-			TypedQuery<Matricula> q2 = em.createQuery(
-					"SELECT m FROM Matricula m JOIN Carrera c WHERE c.id = :idCarrera ORDER BY m.anio_cursada",
-					Matricula.class);
-			q.setParameter("idCarrera", c.getId());
-
-			List<Matricula> matriculas = q2.getResultList();
-			for (Matricula m : matriculas) {
-				TypedQuery<Estudiante> q3 = em.createQuery("SELECT e FROM Estudiante e WHERE e.id = :idEstudiante",
-						Estudiante.class);
-				q.setParameter("idEstudiante", m.getLibreta_uni_estudiante());
-				Estudiante e = q3.getSingleResult();
-				System.out.println("nombre: " + e.getNombre() + " apellido: " + e.getApellido() + " edad: "
-						+ e.getEdad() + "documento: " + e.getDocumento() + " ciudad: " + e.getCiudad()
-						+ " libreta estudiante: " + m.getLibreta_uni_estudiante() + " antiguedad: " + m.getAntiguedad()
-						+ " graduado: " + m.isGraduado() + " anio_cursada: " + m.getAnio_cursada() + "\n\n\n");
-			}
-		}
-
+		Query query = em.createNativeQuery(sql);
+		List<Object[]> reportes = query.getResultList();
+		List<ReporteDTO> reporte = reportes.stream().map(o -> new ReporteDTO((String) o[0], (int) o[1], (int) o[2],(BigInteger) o[3])).collect(Collectors.toList());
+		return reporte;
 	}
-
 	@Override
 	public List<Carrera> getCarrerasWithEstudiantes() {
 		TypedQuery<Carrera> q = em.createQuery(
@@ -53,15 +43,13 @@ public class CarreraRepositoryImpl implements CarreraRepository {
 
 	@Override
 	public List<Estudiante> getEstudiantesByCiudad(Carrera c, String ciudadOrigen) {
-		// AND e.ciudad = :ciudadOrigen
-		// long idCarrera = c.getId();
-		// SELECT DISTINCT p FROM Department d JOIN d.employees e JOIN e.projects p
-		long idCarrera = 1;
+		long idCarrera = c.getId();
 		TypedQuery<Estudiante> q = em.createQuery(
-				"SELECT e FROM Estudiante e,Matricula m WHERE e.libreta_universitaria = m.fk_estudiante",
+				"SELECT e FROM Matricula m JOIN Estudiante e on (e.libreta_universitaria = m.libreta_uni_estudiante) JOIN Carrera c on (m.id_carrera = c.id) WHERE c.id = :idCarrera AND e.ciudad = :ciudadOrigen",
 				Estudiante.class);
-		//q.setParameter("idCarrera", idCarrera);
-		//q.setParameter("ciudadOrigen", ciudadOrigen);
+	q.setParameter("idCarrera", idCarrera);
+	q.setParameter("ciudadOrigen", ciudadOrigen);
+
 		return q.getResultList();
 	}
 

@@ -1,11 +1,11 @@
 package edu.isistan;
 
-import java.util.Calendar;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import dto.ReporteDTO;
 import edu.isistan.controller.CarreraController;
 import edu.isistan.controller.EstudianteController;
 import edu.isistan.entity.Carrera;
@@ -16,9 +16,6 @@ import edu.isistan.repository.EstudianteRepositoryImpl;
 public class Main {
 
 	public static void main(String[] args) {
-		int year = Calendar.getInstance().get(Calendar.YEAR);
-		
-		System.out.println(year);
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("Example");
 		EntityManager em = emf.createEntityManager();
@@ -65,6 +62,10 @@ public class Main {
 		String aux = "Tandil";
 		for (Estudiante est : cController.getEstudiantesByCiudad(d, "Tandil")) {
 			System.out.println(est);
+		}
+
+		for (ReporteDTO rp : cController.getReporteCarreras()) {
+			System.out.println(rp);
 		}
 		
 	}
