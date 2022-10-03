@@ -1,4 +1,4 @@
-package dto;
+package edu.isistan.dto;
 
 import java.math.BigInteger;
 
@@ -8,11 +8,11 @@ public class ReporteDTO {
 	private int anio;
 	private int inscriptos;
 	private BigInteger egresados;
-	
+
 	public ReporteDTO() {
 		super();
 	}
-	
+
 	public ReporteDTO(String carrera, int anio, int inscriptos, BigInteger egresados) {
 		this.carrera = carrera;
 		this.anio = anio;
@@ -42,6 +42,4 @@ public class ReporteDTO {
 				+ egresados + "]";
 	}
 
-	
-	
 }

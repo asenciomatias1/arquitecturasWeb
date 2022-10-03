@@ -1,15 +1,8 @@
 package edu.isistan;
 
-//import java.sql.Timestamp;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
-//import edu.isistan.dao.Direccion;
-//import edu.isistan.dao.Persona;
-//import edu.isistan.dao.Socio;
-//import edu.isistan.dao.Turno;
 
 public class Vacio {
 

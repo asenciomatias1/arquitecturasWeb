@@ -1,6 +1,6 @@
 package edu.isistan.controller;
 
-import java.util.*;
+import java.util.List;
 
 import edu.isistan.entity.Estudiante;
 import edu.isistan.repository.EstudianteRepository;
@@ -31,7 +31,7 @@ public class EstudianteController {
 		}
 		return null;
 	}
-	
+
 	public List<Estudiante> getEstudiantesOrderByApellido() {
 		try {
 			return repo.getEstudiantesOrderByApellido();
@@ -41,7 +41,7 @@ public class EstudianteController {
 		}
 		return null;
 	}
-	
+
 	public List<Estudiante> getEstudiantesByGenero(String genero) {
 		try {
 			return repo.getEstudiantesByGenero(genero);

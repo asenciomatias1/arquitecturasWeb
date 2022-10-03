@@ -2,7 +2,7 @@ package edu.isistan.controller;
 
 import java.util.List;
 
-import dto.ReporteDTO;
+import edu.isistan.dto.ReporteDTO;
 import edu.isistan.entity.Carrera;
 import edu.isistan.entity.Estudiante;
 import edu.isistan.repository.CarreraRepository;
@@ -36,7 +36,7 @@ public class CarreraController {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public List<Carrera> getCarrerasWithEstudiantes() {
 		try {
 			return repo.getCarrerasWithEstudiantes();
@@ -46,7 +46,7 @@ public class CarreraController {
 		}
 		return null;
 	}
-	
+
 	public List<Estudiante> getEstudiantesByCiudad(Carrera carrera, String ciudad) {
 		try {
 			return repo.getEstudiantesByCiudad(carrera, ciudad);
@@ -56,16 +56,14 @@ public class CarreraController {
 		}
 		return null;
 	}
-	public List<ReporteDTO> getReporteCarreras(){
+
+	public List<ReporteDTO> getReporteCarreras() {
 		try {
 			return repo.generarReporte();
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-
-
 
 }

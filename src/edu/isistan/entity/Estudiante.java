@@ -2,14 +2,9 @@ package edu.isistan.entity;
 
 import java.util.List;
 
-//import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -17,7 +12,6 @@ import javax.persistence.OneToMany;
 public class Estudiante {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long libreta_universitaria;
 	@Column(nullable = false)
 	private String nombre;
@@ -38,8 +32,10 @@ public class Estudiante {
 		super();
 	}
 
-	public Estudiante(String nombre, String apellido, int edad, String genero, int documento, String ciudad) {
+	public Estudiante(long libreta_universitaria, String nombre, String apellido, int edad, String genero,
+			int documento, String ciudad) {
 		super();
+		this.libreta_universitaria = libreta_universitaria;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.edad = edad;
