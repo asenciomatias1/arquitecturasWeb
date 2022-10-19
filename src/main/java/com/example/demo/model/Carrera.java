@@ -14,7 +14,7 @@ public class Carrera {
     @Column
     private int duracion;
     @Column
-    private int cantEstudiantes;
+    private int cant_estudiantes;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "id_carrera")
     private List<Matricula> matriculas;
 
@@ -27,7 +27,7 @@ public class Carrera {
         super();
         this.nombre = nombre;
         this.duracion = duracion;
-        cantEstudiantes = 0;
+        cant_estudiantes = 0;
     }
 
     public String getNombre() {
@@ -47,15 +47,15 @@ public class Carrera {
     }
 
     public int getCantEstudiantes() {
-        return cantEstudiantes;
+        return cant_estudiantes;
     }
 
     public void setCantEstudiantes(int cantEstudiantes) {
-        this.cantEstudiantes = cantEstudiantes;
+        this.cant_estudiantes = cantEstudiantes;
     }
     
     public void aumentarCantEstudiantes() {
-    	this.cantEstudiantes++;
+    	this.cant_estudiantes++;
     }
 
     public List<Matricula> getMatriculas() {
@@ -77,7 +77,7 @@ public class Carrera {
     @Override
     public String toString() {
         return "Carrera [id=" + id + ", nombre=" + nombre + ", duracion=" + duracion + ", cantEstudiantes="
-                + cantEstudiantes + ", matriculas=" + "]\n";
+                + cant_estudiantes + ", matriculas=" + "]\n";
     }
 
 }
