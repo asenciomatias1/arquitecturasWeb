@@ -7,8 +7,10 @@ import com.example.demo.repository.CarreraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class CarreraServiceImpl implements CarreraService {
@@ -58,9 +60,13 @@ public class CarreraServiceImpl implements CarreraService {
 	public List<Carrera> getCarrerasConInscriptos() {
 		return repository.findAllWithEstudiantes();
 	}
-	
+
 	@Override
 	public List<ReporteDTO> getReporteDeCarreras() {
-		return repository.generarReporte();
+        List<Object[]> reportes = repository.generarReporte();
+        List<ReporteDTO> reporte = reportes.stream()
+                .map(o -> new ReporteDTO((String) o[0], (int) o[1], (int) o[2], (BigInteger) o[3]))
+                .collect(Collectors.toList());
+        return reporte;
 	}
 }

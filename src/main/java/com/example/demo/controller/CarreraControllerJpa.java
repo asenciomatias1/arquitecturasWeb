@@ -29,38 +29,21 @@ public class CarreraControllerJpa {
     public Iterable<Carrera> getCarreras() {
         return service.getAllCarreras();
     }
-    
+
     @GetMapping("/conInscriptos")
     public List<Carrera> getCarrerasConInscriptos() {
         return service.getCarrerasConInscriptos();
     }
-    
+
     @GetMapping("/reporte")
     public List<ReporteDTO> getReporteDeCarreras() {
         return service.getReporteDeCarreras();
     }
-/*
-    @ApiOperation(value = "Get list of carreras by name ", response = Iterable.class)
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Success|OK"),
-            @ApiResponse(code = 401, message = "not authorized!"),
-            @ApiResponse(code = 403, message = "forbidden!!!"),
-            @ApiResponse(code = 404, message = "not found!!!")})
-    @GetMapping("/ByName/{name}")
-    public Iterable<Carrera> getCarrerasByName(@PathVariable String name) {
-        return service.findAllByName(name);
-    }*/
 
     @PostMapping("")
     public Carrera newCarrera(@RequestBody Carrera c) {
         return service.saveCarrera(c);
     }
-
-    /*@ApiOperation(value = "Get specific Carrera in the System ", response = Carrera.class, tags = "getCarrera")
-    @RequestMapping(value = "/{name}")
-    public Carrera getCarrera(@PathVariable(value = "name") String name) {
-        return service.findAllByName(name).get(0);
-    }*/
 
     @GetMapping("/{id}")
     Optional<Carrera> one(@PathVariable Long id) {

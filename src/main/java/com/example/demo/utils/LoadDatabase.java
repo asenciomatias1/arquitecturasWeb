@@ -31,7 +31,7 @@ class LoadDatabase {
 	    "ciudad":"Tandil"
 	}
 	**/
-	
+
 	/**
 	 * Add carrera (POST)
 	 * http://localhost:8080/carreras
@@ -40,7 +40,7 @@ class LoadDatabase {
 	    "duracion":"2"
 	}
 	**/
-	
+
 	/**
 	{
     "libreta_uni_estudiante":{
@@ -60,10 +60,10 @@ class LoadDatabase {
     },
     "antiguedad": "1",
     "graduado": "false",
-    "anio_cursado": "2022"
+    "anio_cursada": "2022"
 }
 **/
-	
+
 	/**
     @Bean
     CommandLineRunner initDatabase(@Qualifier("estudianteRepository") EstudianteRepository estudianteRepository, @Qualifier("carreraRepository") CarreraRepository carreraRepository, @Qualifier("matriculaRepository") MatriculaRepository matriculaRepository) {

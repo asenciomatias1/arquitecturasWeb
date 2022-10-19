@@ -46,29 +46,16 @@ public class EstudianteControllerJpa {
     public Estudiante saveEstudiante(@RequestBody Estudiante e) {
         return service.saveEstudiante(e);
     }
-    
-    /*
-     * @RequestMapping(value="user", method = RequestMethod.GET)
-		public @ResponseBody Item getItem(@RequestParam("data") String itemid){
-     */
-    
-    //@ApiOperation(value = "Get list of students by genre", response = Estudiante.class, tags = "getEstudiantesByGenero")
-    
-    
-//    @RequestMapping(value="/estudiantes", method = RequestMethod.GET)
-//    public @ResponseBody List<Estudiante> getEstudiantesByGenero(@RequestParam("genero") String genero) {
-//        return service.findAllByGenero(genero);
-//    }
-    
+
     @GetMapping("/genero/{genero}")
     public List<Estudiante> getEstudiantesByGenero(@PathVariable(value="genero") String genero) {
         return service.findAllByGenero(genero);
     }
-    
+
     @GetMapping("/carrera/{idCarrera}/ciudad/{ciudad}")
-    public List<Estudiante> getEstudiantesByGenero(@PathVariable(value="idCarrera") 
+    public List<Estudiante> getEstudiantesByGenero(@PathVariable(value="idCarrera")
     	long idCarrera, @PathVariable(value="ciudad") String ciudad) {
-    	
+
         return service.findAllByCarreraByCiudad(idCarrera, ciudad);
     }
 
