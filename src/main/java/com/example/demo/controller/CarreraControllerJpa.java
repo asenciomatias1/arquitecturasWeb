@@ -25,31 +25,52 @@ public class CarreraControllerJpa {
         service = repository;
     }
 
+    @ApiOperation(value = "Get list of carreras", response = Iterable.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success|OK"),
+            @ApiResponse(code = 401, message = "not authorized!"),
+            @ApiResponse(code = 403, message = "forbidden!!!"),
+            @ApiResponse(code = 404, message = "not found!!!")})
     @GetMapping("")
     public Iterable<Carrera> getCarreras() {
         return service.getAllCarreras();
     }
 
+    @ApiOperation(value = "Get list of carreras con inscriptos ", response = Iterable.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success|OK"),
+            @ApiResponse(code = 401, message = "not authorized!"),
+            @ApiResponse(code = 403, message = "forbidden!!!"),
+            @ApiResponse(code = 404, message = "not found!!!")})
     @GetMapping("/conInscriptos")
     public List<Carrera> getCarrerasConInscriptos() {
         return service.getCarrerasConInscriptos();
     }
 
+    @ApiOperation(value = "Get list of reporte de carreras ", response = Iterable.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success|OK"),
+            @ApiResponse(code = 401, message = "not authorized!"),
+            @ApiResponse(code = 403, message = "forbidden!!!"),
+            @ApiResponse(code = 404, message = "not found!!!")})
     @GetMapping("/reporte")
     public List<ReporteDTO> getReporteDeCarreras() {
         return service.getReporteDeCarreras();
     }
 
+    @ApiOperation(value = "Save a carrera", response = Carrera.class)
     @PostMapping("")
     public Carrera newCarrera(@RequestBody Carrera c) {
         return service.saveCarrera(c);
     }
 
+    @ApiOperation(value = "Get one carrera by id", response = Carrera.class)
     @GetMapping("/{id}")
     Optional<Carrera> one(@PathVariable Long id) {
         return service.getCarreraById(id);
     }
 
+    @ApiOperation(value = "Replace one carrera by id", response = Carrera.class)
     @PutMapping("/{id}")
     Carrera replaceCarrera(@RequestBody Carrera newCarrera, @PathVariable Long id) {
 
@@ -66,6 +87,7 @@ public class CarreraControllerJpa {
                 });
     }
 
+    @ApiOperation(value = "Delete carrera by id", response = Carrera.class)
     @DeleteMapping("/{id}")
     void deleteCarrera(@PathVariable Long id) {
         service.deleteCarreraById(id);
