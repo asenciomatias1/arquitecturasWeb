@@ -25,30 +25,31 @@ public class MatriculaControllerJpa {
         this.service = service;
     }
 
-    @GetMapping("")
-    public Iterable<Matricula> getMatriculas() {
-        return service.getAllMatriculas();
-    }
-
-    @ApiOperation(value = "Get list of matricula by name ", response = Iterable.class)
+    @ApiOperation(value = "Get list of matriculas", response = Iterable.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success|OK"),
             @ApiResponse(code = 401, message = "not authorized!"),
             @ApiResponse(code = 403, message = "forbidden!!!"),
             @ApiResponse(code = 404, message = "not found!!!")})
+    @GetMapping("")
+    public Iterable<Matricula> getMatriculas() {
+        return service.getAllMatriculas();
+    }
 
+    @ApiOperation(value = "Save a matricula ", response = Matricula.class)
     @PostMapping("")
     public Matricula newMatricula(@RequestBody Matricula m) {
         return service.saveMatricula(m);
     }
 
-    @ApiOperation(value = "Get specific Matricula in the System ", response = Matricula.class, tags = "getMatricula")
-
+   
+    @ApiOperation(value = "Get one matricula by id ", response = Matricula.class)
     @GetMapping("/{id}")
     Optional<Matricula> one(@PathVariable Long id) {
         return service.getMatriculaById(id);
     }
 
+    @ApiOperation(value = "Replace one matricula by id", response = Matricula.class)
     @PutMapping("/{id}")
     Matricula replaceMatricula(@RequestBody Matricula newMatricula, @PathVariable Long id) {
 
@@ -68,6 +69,7 @@ public class MatriculaControllerJpa {
                 });
     }
 
+    @ApiOperation(value = "Delete matricula by id", response = Carrera.class)
     @DeleteMapping("/{id}")
     void deleteMatricula(@PathVariable Long id) {
         service.deleteMatriculaById(id);
