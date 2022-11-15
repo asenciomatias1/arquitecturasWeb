@@ -7,3 +7,6 @@ Manuel Hollman
 
 ## Swagger Link
 - http://localhost:8080/swagger-ui/#/
+
+## Utilizacion
+- Abrir XAMPP, crear db "integrador5", ejecutar projecto 
