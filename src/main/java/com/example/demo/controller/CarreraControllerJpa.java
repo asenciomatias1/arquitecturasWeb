@@ -4,11 +4,10 @@ import com.example.demo.model.Carrera;
 import com.example.demo.model.Estudiante;
 import com.example.demo.model.ReporteDTO;
 import com.example.demo.service.CarreraService;
-import io.swagger.annotations.Api;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 
