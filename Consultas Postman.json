@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "19317cbe-76a8-451f-8fef-83c53e1be35c",
-		"name": "TPE",
+		"_postman_id": "1f6dcc92-51e0-4790-b230-26b25a90c398",
+		"name": "integrador-5-consultas-heroku",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "16208542"
+		"_exporter_id": "18142182"
 	},
 	"item": [
 		{
@@ -21,12 +21,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/estudiantes",
-					"protocol": "http",
+					"raw": "https://arquiapp.herokuapp.com/estudiantes",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"arquiapp",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"estudiantes"
 					]
@@ -38,10 +39,6 @@
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{url}}/https://60c28f19917002001739d2ee.mockapi.io/tabla/Sugerencias/",
 							"protocol": "{{url}}/https",
@@ -58,8 +55,8 @@
 						}
 					},
 					"code": 200,
-					"_postman_previewlanguage": null,
-					"header": null,
+					"_postman_previewlanguage": "Text",
+					"header": [],
 					"cookie": [],
 					"body": ""
 				}
@@ -80,12 +77,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/estudiantes",
-					"protocol": "http",
+					"raw": "https://arquiapp.herokuapp.com/estudiantes",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"arquiapp",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"estudiantes"
 					]
@@ -97,10 +95,6 @@
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{url}}/https://60c28f19917002001739d2ee.mockapi.io/tabla/Sugerencias/",
 							"protocol": "{{url}}/https",
@@ -117,8 +111,8 @@
 						}
 					},
 					"code": 200,
-					"_postman_previewlanguage": null,
-					"header": null,
+					"_postman_previewlanguage": "Text",
+					"header": [],
 					"cookie": [],
 					"body": ""
 				}
@@ -139,12 +133,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/carreras",
-					"protocol": "http",
+					"raw": "https://arquiapp.herokuapp.com/carreras",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"arquiapp",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"carreras"
 					]
@@ -156,10 +151,6 @@
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{url}}/https://60c28f19917002001739d2ee.mockapi.io/tabla/Sugerencias/",
 							"protocol": "{{url}}/https",
@@ -176,8 +167,8 @@
 						}
 					},
 					"code": 200,
-					"_postman_previewlanguage": null,
-					"header": null,
+					"_postman_previewlanguage": "Text",
+					"header": [],
 					"cookie": [],
 					"body": ""
 				}
@@ -198,12 +189,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/carreras",
-					"protocol": "http",
+					"raw": "https://arquiapp.herokuapp.com/carreras",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"arquiapp",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"carreras"
 					]
@@ -215,10 +207,6 @@
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{url}}/https://60c28f19917002001739d2ee.mockapi.io/tabla/Sugerencias/",
 							"protocol": "{{url}}/https",
@@ -235,8 +223,8 @@
 						}
 					},
 					"code": 200,
-					"_postman_previewlanguage": null,
-					"header": null,
+					"_postman_previewlanguage": "Text",
+					"header": [],
 					"cookie": [],
 					"body": ""
 				}
@@ -257,12 +245,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/matriculas",
-					"protocol": "http",
+					"raw": "https://arquiapp.herokuapp.com/matriculas",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"arquiapp",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"matriculas"
 					]
@@ -274,10 +263,6 @@
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
 							"raw": "{{url}}/https://60c28f19917002001739d2ee.mockapi.io/tabla/Sugerencias/",
 							"protocol": "{{url}}/https",
@@ -294,8 +279,8 @@
 						}
 					},
 					"code": 200,
-					"_postman_previewlanguage": null,
-					"header": null,
+					"_postman_previewlanguage": "Text",
+					"header": [],
 					"cookie": [],
 					"body": ""
 				}
@@ -305,7 +290,20 @@
 			"name": "/reporte",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://arquiapp.herokuapp.com/carreras/reporte",
+					"protocol": "https",
+					"host": [
+						"arquiapp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"carreras",
+						"reporte"
+					]
+				}
 			},
 			"response": []
 		},
@@ -315,12 +313,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/carreras",
-					"protocol": "http",
+					"raw": "https://arquiapp.herokuapp.com/carreras",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"arquiapp",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"carreras"
 					]
@@ -334,14 +333,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/carreras",
-					"protocol": "http",
+					"raw": "https://arquiapp.herokuapp.com/carreras/conInscriptos",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"arquiapp",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
-						"carreras"
+						"carreras",
+						"conInscriptos"
 					]
 				}
 			},
@@ -353,12 +354,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/estudiantes",
-					"protocol": "http",
+					"raw": "https://arquiapp.herokuapp.com/estudiantes",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"arquiapp",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"estudiantes"
 					]
@@ -370,7 +372,19 @@
 			"name": "/matriculas",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://arquiapp.herokuapp.com/matriculas",
+					"protocol": "https",
+					"host": [
+						"arquiapp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"matriculas"
+					]
+				}
 			},
 			"response": []
 		},
@@ -380,12 +394,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/estudiantes/OrderByApellido",
-					"protocol": "http",
+					"raw": "https://arquiapp.herokuapp.com/estudiantes/OrderByApellido",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"arquiapp",
+						"herokuapp",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"estudiantes",
 						"OrderByApellido"
@@ -398,23 +413,66 @@
 			"name": "/estudiantes/id",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://arquiapp.herokuapp.com/estudiantes/560855",
+					"protocol": "https",
+					"host": [
+						"arquiapp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"estudiantes",
+						"560855"
+					]
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "/estudiantes/genero/Masculino",
+			"name": "/estudiantes/genero/Femenino",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://arquiapp.herokuapp.com/estudiantes/genero/Femenino",
+					"protocol": "https",
+					"host": [
+						"arquiapp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"estudiantes",
+						"genero",
+						"Femenino"
+					]
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "/carrera/{idCarrera}/ciudad/{ciudad}",
+			"name": "/estudiantes/carrera/{idCarrera}/ciudad/{ciudad}",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://arquiapp.herokuapp.com/estudiantes/carrera/1/ciudad/Tandil",
+					"protocol": "https",
+					"host": [
+						"arquiapp",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"estudiantes",
+						"carrera",
+						"1",
+						"ciudad",
+						"Tandil"
+					]
+				}
 			},
 			"response": []
 		}
